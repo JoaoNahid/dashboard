@@ -1,6 +1,10 @@
 import React from 'react';
+import ChartBox from './components/chartBox';
 import SkillBox from './components/skillsBox';
+import PercentageBox from './components/percentageArea';
 import Welcome from './components/welcome'
+import Profile from './components/profile';
+import Tasks from './components/tasksBox';
 
 export default function Dashboard() {
   return (
@@ -24,9 +28,19 @@ export default function Dashboard() {
               <SkillBox skill="React" />
             </div>
 
+            <div className="twoBoxes">
+              <ChartBox />
+              <PercentageBox text="Desenvolvimento Web" />
+            </div>
+
           </div>
         </div>
-        <div className="col-md-4"></div>
+        <div className="col-md-4">
+          <div id="rightSidebar">
+            <Profile />
+            <Tasks />
+          </div>
+        </div>
       </div>
     </div>
   );

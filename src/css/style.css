@@ -10,8 +10,6 @@ body{
   font-family: 'Lato', sans-serif;
 }
 :root{
-  --cor1: #099c22;
-  --cor2: #424242;
   --background: #0f0e12;
   --gray: #1c1b22;
   --wGray: #2d2d37;
@@ -33,11 +31,13 @@ body{
   background-color: var(--blue);
 }
 
-#dashboardContent{
+#dashboardContent, #rightSidebar{
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
+
+/* Search area */
 .searchArea{
   background-color: var(--wGray);
   display: flex;
@@ -47,11 +47,18 @@ body{
   padding: 8px;
   border-radius: 16px;
 }
+.searchArea img{
+  width: 25px;
+}
 .searchArea input{
   background-color: transparent;
   border: none;
   color: var(--whiteTxt);
   width: 100%;
+  margin-left: 8px;
+}
+.searchArea input:focus{
+  outline: none;
 }
 
 /* Welcome area */
@@ -81,14 +88,14 @@ body{
   color: var(--whiteTxt);
   font-size: 13px;
 }
-
-/* Skill box */
-.threeBoxes{
+.threeBoxes, .twoBoxes{
   display: flex;
   flex-direction: row;
   gap: 12px;
   justify-content: space-between;
 }
+/* Skill box */
+
 #skillBox{
   display: flex;
   flex-direction: column;
@@ -106,4 +113,309 @@ body{
 }
 .headerSkillBox span{
   color: var(--whiteTxt);
+}
+
+/* Chart area */
+#chartBox{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* height: 350px; */
+  border-radius: 16px;
+  padding: 12px;
+  background-color: var(--gray);
+  gap: 16px;
+}
+.headerChartBox{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.headerChartBox span{
+  color: var(--whiteTxt);
+  
+}
+.contentChartBox{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.chart{
+  width: 100%;
+}
+
+.chartDescription{
+  width: 75%;
+  height: 200px;
+  border-radius: 12px;
+  padding: 8px;
+  background-color: var(--wGray);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.itemChartDescription{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.itemChartDescription span{
+  color: var(--whiteTxt);
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1;
+  margin: 0;
+}
+.itemChartDescription p{
+  color: var(--subText);
+  font-size: 13px;
+  margin: 0;
+}
+
+.btnBoxes{
+  background-color: var(--blue);
+  padding: 4px 8px;
+  border-radius: 8px;
+  color: var(--subText);
+  cursor: pointer;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.btnBoxes img{
+  width: 10px;
+}
+
+/* Percentage Bar */
+.percentagesBar{
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+}
+.titlePercentage{
+  color: var(--whiteTxt);
+  margin-bottom: 4px;
+}
+.fullPercentage{
+  width: 100%;
+  height: 4px;
+  border-radius: 4px;
+  background-color: var(--wGray);
+  position: relative;
+}
+.fullPercentage span{
+  position: absolute;
+  right: 0;
+  top: -24px;
+  color: var(--subText);
+  font-size: 13px;
+}
+.percentage{
+  height: 100%;
+  border-radius: 4px;
+}
+
+/* Profile */
+#profileBox, #tasksBox{
+  width: 100%;
+  background-color: var(--gray);
+  border-radius: 16px;
+  max-height: max-content;
+  transition: max-height 1s cubic-bezier(0, 1, 0, 1);
+}
+.closedProfile{
+  max-height: 50px !important;
+  overflow: hidden;
+  transition: max-height 1s ease-in-out;
+}
+.headerProfile, .headerTasks{
+  width: 100%;
+  height: 50px;
+  padding: 8px 16px;
+  border-radius: 16px;
+  background-color: var(--blue);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.headerProfile p, .headerTasks p{
+  margin: 0;
+  color: var(--whiteTxt);
+  font-weight: 500;
+}
+.toggleDropdown{
+  width: 30px;
+  height: 30px;
+  position: relative;
+  background-color: var(--opacityWhite);
+  border-radius: 8px;
+  cursor: pointer;
+}
+#arrowProfile{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  margin: auto;
+  width: 15px;
+  transform: rotate(90deg);
+}
+.arrowInherit{
+  transform: inherit !important;
+}
+.contentProfile, .contentTasks{
+  background-color: var(--gray);
+  padding: 16px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.aboutProfile{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+.avatar{
+  width: 80px;
+  height: 60px;
+  position: relative;
+  border-radius: 50%;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+.informations{
+  width: 100%;
+}
+.informations h3{
+  color: var(--whiteTxt);
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+.informations span{
+  color: var(--subText);
+  font-size: 13px;
+}
+.informations .city{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: baseline;
+  gap: 8px;
+}
+.informations .city img{
+  width: 12px;
+}
+.moreInformationsAbout{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+.itemMoreInformation{
+  background-color: var(--wGray);
+  border-radius: 16px;
+  padding: 4px 8px;
+  width: 100%;
+}
+.itemMoreInformation span{
+  color: var(--whiteTxt);
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1;
+  margin: 0;
+}
+.itemMoreInformation p{
+  color: var(--subText);
+  font-size: 13px;
+  margin: 0;
+}
+
+/* Tasks */
+.btnsTasks{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--wGray);
+  padding: 16px;
+  border-radius: 16px;
+}
+.btnsTasks>div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+.bgBlue{
+  background-color: var(--blue) !important;
+}
+.btnTask{
+  background-color: var(--opacityWhite);
+  padding: 4px 8px;
+  border-radius: 8px;
+  color: var(--whiteTxt);
+  cursor: pointer;
+  border: none;
+  width: 100%;
+}
+.tasksArea{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: space-between;
+  align-items: center;
+}
+.task{
+  width: 100%;
+  border-bottom: solid 2px var(--wGray);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 4px;
+}
+.task>div{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+}
+.task>div .date{
+  color: var(--subText);
+  font-size: 13px;
+}
+.task>div .status{
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: green;
+}
+.task>div span{
+  color: var(--whiteTxt);
+  font-size: 16px;
+  font-weight: 500;
+}
+.btnCompleteTask{
+  justify-self: end;
 }
