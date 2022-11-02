@@ -1,0 +1,109 @@
+body{
+  margin: 0;
+  padding: 12px !important;
+  font-family: 'Josefin Sans', sans-serif !important;
+  background: var(--background) !important;
+}
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
+}
+:root{
+  --cor1: #099c22;
+  --cor2: #424242;
+  --background: #0f0e12;
+  --gray: #1c1b22;
+  --wGray: #2d2d37;
+  --whiteTxt: #f2f7f3;
+  --subText: rgba(242, 247, 243, .6);
+  --opacityWhite: rgba(242, 247, 243, .4);
+  --blue: #1565c0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+
+/* Blue sidebar */
+.blueSidebar{
+  width: 80px;
+  height: 100vh;
+  padding: 16px;
+  border-radius: 16px;
+  background-color: var(--blue);
+}
+
+#dashboardContent{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.searchArea{
+  background-color: var(--wGray);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+  border-radius: 16px;
+}
+.searchArea input{
+  background-color: transparent;
+  border: none;
+  color: var(--whiteTxt);
+  width: 100%;
+}
+
+/* Welcome area */
+#welcomeArea{
+  width: 100%;
+  border-radius: 16px;
+  height: 180px;
+  background-color: var(--blue);
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+#welcomeArea .welcomeTo{
+  color: var(--whiteTxt);
+  font-size: 24px;
+  font-weight: 500;
+}
+#welcomeArea .userProfession{
+  color: var(--subText);
+}
+#welcomeArea .date{
+  background-color: var(--opacityWhite);
+  width: max-content;
+  padding: 4px 8px;
+  border-radius: 8px;
+  color: var(--whiteTxt);
+  font-size: 13px;
+}
+
+/* Skill box */
+.threeBoxes{
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  justify-content: space-between;
+}
+#skillBox{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 200px;
+  border-radius: 16px;
+  padding: 12px;
+  background-color: var(--gray);
+}
+.headerSkillBox{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.headerSkillBox span{
+  color: var(--whiteTxt);
+}
