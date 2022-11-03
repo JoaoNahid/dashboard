@@ -21,14 +21,49 @@ body{
 
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
-
-/* Blue sidebar */
-.blueSidebar{
+.appContent{
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+/* Sidebar */
+#sidebar{
   width: 80px;
   height: 100vh;
   padding: 16px;
   border-radius: 16px;
   background-color: var(--blue);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+#sidebar>div{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.sidebarIcon{
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+.sidebarIconActive{
+  background-color: var(--opacityWhite);
+}
+.sidebarIcon img{
+  width: 25px;
+}
+.sidebarIcon span{
+  color: var(--whiteTxt);
+  font-size: 11px;
+  font-weight: 500;
 }
 
 #dashboardContent, #rightSidebar{
@@ -47,6 +82,10 @@ body{
   padding: 8px;
   border-radius: 16px;
 }
+.searchButton{
+  padding: 0 4px 0 12px;
+  cursor: pointer;
+}
 .searchArea img{
   width: 25px;
 }
@@ -61,6 +100,31 @@ body{
   outline: none;
 }
 
+.linkHeader{
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background-color: var(--wGray);
+  padding: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.linkHeader:hover{
+  background-color: var(--gray);
+  transition: ease 0.5s;
+}
+.linkHeader img{
+  width: 20px;
+}
+.linksAreaHeader{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 8px
+}
+
 /* Welcome area */
 #welcomeArea{
   width: 100%;
@@ -71,6 +135,15 @@ body{
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  position: relative;
+}
+#welcomeArea>img{
+  position: absolute;
+  width: 250px;
+  bottom: 0;
+  top: 0;
+  right: 80px;
+  margin: auto;
 }
 #welcomeArea .welcomeTo{
   color: var(--whiteTxt);
@@ -85,6 +158,18 @@ body{
   width: max-content;
   padding: 4px 8px;
   border-radius: 8px;
+  color: var(--whiteTxt);
+  font-size: 13px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+#welcomeArea .date img{
+  width: 20px;
+}
+#welcomeArea .date span{
   color: var(--whiteTxt);
   font-size: 13px;
 }
@@ -113,6 +198,10 @@ body{
 }
 .headerSkillBox span{
   color: var(--whiteTxt);
+}
+.headerSkillBox img{
+  width: 15px;
+  cursor: pointer;
 }
 
 /* Chart area */
@@ -178,7 +267,7 @@ body{
   background-color: var(--blue);
   padding: 4px 8px;
   border-radius: 8px;
-  color: var(--subText);
+  color: var(--whiteTxt);
   cursor: pointer;
   border: none;
   display: flex;
@@ -280,6 +369,7 @@ body{
   display: flex;
   flex-direction: column;
   gap: 16px;
+  position: relative;
 }
 .aboutProfile{
   display: flex;
@@ -347,7 +437,8 @@ body{
 }
 
 /* Tasks */
-.btnsTasks{
+.btnsTasks,
+.modalAddTask{
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -357,7 +448,8 @@ body{
   padding: 16px;
   border-radius: 16px;
 }
-.btnsTasks>div{
+.btnsTasks>div,
+.modalAddTask>div{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -405,6 +497,13 @@ body{
   color: var(--subText);
   font-size: 13px;
 }
+.task>div .date img{
+  width: 15px;
+}
+.task>div .date span{
+  color: var(--subText);
+  font-size: 13px;
+}
 .task>div .status{
   width: 8px;
   height: 8px;
@@ -418,4 +517,17 @@ body{
 }
 .btnCompleteTask{
   justify-self: end;
+}
+
+/* Modal add task */
+.modalAddTask input{
+  background: transparent;
+  border: none;
+  width: 100%;
+  color: var(--whiteTxt);
+  border-bottom: solid 1px var(--opacityWhite);
+  padding: 0 4px
+}
+.modalAddTask input:focus{
+  outline: none;
 }

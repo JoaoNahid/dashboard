@@ -5,8 +5,8 @@ function ChartBox(props) {
   return ( 
     <div id="chartBox">
       <div className="headerChartBox">
-        <span>Desenvolvimento Web</span>
-        <BtnBoxes text="Detalhes" />
+        <span>{props.title}</span>
+        <BtnBoxes text="Details" />
       </div>
 
       <div className="contentChartBox">
@@ -16,17 +16,17 @@ function ChartBox(props) {
         <div className="chartDescription">
           <div className="itemChartDescription">
             <span>2</span>
-            <p>Anos de experiência</p>
+            <p>Years of experience</p>
           </div>
 
           <div className="itemChartDescription">
             <span>1</span>
-            <p>Ano trabalhando</p>
+            <p>Year working</p>
           </div>
 
           <div className="itemChartDescription">
-            <span>3</span>
-            <p>Anos de curso</p>
+            <span>IT</span>
+            <p>Technician</p>
           </div>
         </div>
       </div>

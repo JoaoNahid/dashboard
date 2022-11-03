@@ -6,8 +6,8 @@ function PercentageBox(props) {
   return ( 
     <div id="chartBox">
       <div className="headerChartBox">
-        <span> {props.text} </span>
-        <BtnBoxes text="Detalhes" />
+        <span> {props.title} </span>
+        <BtnBoxes text="Details" />
       </div>
 
       <div className="contentChartBox">

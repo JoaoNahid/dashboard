@@ -3,8 +3,10 @@ import React from 'react';
 function Welcome(props) {
   return ( 
     <div id='welcomeArea'>
+      <img src="./img/pngWelcome.png" alt="" />
       <div className="date">
-        Feb. 2, November
+        <img src="./img/calendar.png" alt="" />
+        <span>Feb. 2, November</span>
       </div>
       <div>
         <div className="welcomeTo">Good Day Mr. {props.name}</div>

@@ -5,19 +5,31 @@ import PercentageBox from './components/percentageArea';
 import Welcome from './components/welcome'
 import Profile from './components/profile';
 import Tasks from './components/tasksBox';
+import SearcBar from './components/searchBar';
+import LinkHeader from './components/linkHeader';
+import { Sidebar } from './components/Sidebar/sidebar';
 
 export default function Dashboard() {
   return (
-    <div className="">
-      {/* <BlueSidebar /> */}
+    <div className="appContent">
+      <Sidebar />
       <div className="row w-100">      
         <div className="col-md-8">
           <div id="dashboardContent">
-            <div className="searchArea">
-              <input type="text" placeholder="Pesquisar ..."/>
-              <div>
-                <img src="./img/magnifying-glass.png" alt="" />
+            <div className="header">
+              <div className="row">
+                <div className="col-md-8">
+                  <SearcBar placeholder="Search..." />
+                </div>
+                <div className="col-md-4">
+                  <div className="linksAreaHeader">
+                    <LinkHeader link="" icon="facebook.png" />
+                    <LinkHeader link="https://github.com/JoaoNahid" icon="github.png" />
+                  </div>
+                </div>
               </div>
+              
+              
             </div>
 
             <Welcome name="João Nahid" profession="Web developer at Webtagger" />
@@ -29,8 +41,8 @@ export default function Dashboard() {
             </div>
 
             <div className="twoBoxes">
-              <ChartBox />
-              <PercentageBox text="Desenvolvimento Web" />
+              <ChartBox title="Web Development" />
+              <PercentageBox title="Web Development" />
             </div>
 
           </div>

@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import ModalAddTask from './modalAddTask';
 import Task from './task';
 
 function Tasks() {
@@ -25,30 +26,38 @@ function Tasks() {
       </div>
 
       <div className="contentTasks">
-        <div className="btnsTasks">
-          <button 
-            className="btnTask bgBlue"
-            onClick={() => setOpenModal(true)}
-          >
-            Add Task
-          </button>
-          <div>
-            <button 
-              id="pending"
-              className="btnTask bgBlue btnFilterTask"
-              onClick={(e) => handleFilter(e)}
-            >
-              Pending
-            </button>
-            <button 
-              id="complete"
-              className="btnTask btnFilterTask"
-              onClick={(e) => handleFilter(e)}
-            >
-              Completed
-            </button>
-          </div>
-        </div>
+        {
+          openModal?
+            <ModalAddTask setOpenModal={setOpenModal}/>
+          :
+            <>
+              <div className="btnsTasks">
+                <button 
+                  className="btnTask bgBlue"
+                  onClick={() => setOpenModal(true)}
+                >
+                  Add Task
+                </button>
+                <div>
+                  <button 
+                    id="pending"
+                    className="btnTask bgBlue btnFilterTask"
+                    onClick={(e) => handleFilter(e)}
+                  >
+                    Pending
+                  </button>
+                  <button 
+                    id="complete"
+                    className="btnTask btnFilterTask"
+                    onClick={(e) => handleFilter(e)}
+                  >
+                    Completed
+                  </button>
+                </div>
+              </div>
+            </>
+        }
+        
 
         <div className="tasksArea">
           <Task title="Programming dasboard" pending={true} date="Nov. 02, 2020" />

@@ -5,6 +5,7 @@ function SkillBox(props) {
     <div id="skillBox">
       <div className="headerSkillBox">
         <span>{props.skill}</span>
+        <img src="./img/dotsMenu.png" alt="" />
       </div> 
     </div>
    );
